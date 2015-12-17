@@ -1,6 +1,10 @@
 #Angular Quickstart for ES6
 
-Node modules are included in this. To run type the command:
+Node Modules are not included, so in order to run you need to run the following commands: (as long as npm is installed)
+
+	npm install
 
 	npm start
+
+
 
