@@ -6,5 +6,8 @@ Node Modules are not included, so in order to run you need to run the following 
 
 	npm start
 
+## Included Tutorials
 
+angular-quickstart -> angular-quickstart1
+Hall of Heros App is split by page in the tutorial.
 
