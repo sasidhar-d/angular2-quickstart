@@ -1,0 +1,1 @@
+For this setup, I was able to natively compile it in the browser. As soon as we introduce modules, we will need to start using a precomipler like babel.
