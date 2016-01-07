@@ -11,3 +11,10 @@ Node Modules are not included, so in order to run you need to run the following 
 angular-quickstart -> angular-quickstart1
 Hall of Heros App is split by page in the tutorial.
 
+## Build steps.
+
+To build this project, run
+
+	gulp build
+
+	npm start
