@@ -11,6 +11,8 @@ import {Hero} from './hero.js';
                   new Hero(19 , "Magma"),
                   new Hero(20 , "Tornado")];
 
+console.log('Line 14');
+
   export var AppComponent = ng.core
     .Component({
       selector: 'my-app',
@@ -63,4 +65,6 @@ import {Hero} from './hero.js';
       }
 
     });
+
+throw new Error('Error');
 

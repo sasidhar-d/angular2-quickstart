@@ -18,3 +18,4 @@ System.register(['./hero.js'], function (_export, _context) {
         }
     };
 });
+//# sourceMappingURL=hero-detail.component.js.map

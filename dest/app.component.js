@@ -2,12 +2,20 @@
 
 System.register(["./hero.js"], function (_export, _context) {
   var Hero, HEROES, AppComponent;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
   return {
     setters: [function (_heroJs) {
       Hero = _heroJs.Hero;
     }],
     execute: function () {
       HEROES = [new Hero(11, "Mr. Nice"), new Hero(12, "Narco"), new Hero(13, "Bombasto"), new Hero(14, "Celeritas"), new Hero(15, "Magneta"), new Hero(16, "RubberMan"), new Hero(17, "Dynama"), new Hero(18, "Dr IQ"), new Hero(19, "Magma"), new Hero(20, "Tornado")];
+      console.log('Line 14');
 
       _export("AppComponent", AppComponent = ng.core.Component({
         selector: 'my-app',
@@ -22,10 +30,19 @@ System.register(["./hero.js"], function (_export, _context) {
           this.onSelect = function (hero) {
             this.selectedHero = hero;
           };
+
+          var sampleClass = function sampleClass() {
+            _classCallCheck(this, sampleClass);
+
+            this.hello = "something";
+          };
         }
       }));
 
       _export("AppComponent", AppComponent);
+
+      throw new Error('Error');
     }
   };
 });
+//# sourceMappingURL=app.component.js.map
