@@ -12,3 +12,9 @@ gulp.task('build', function() {
 			.pipe(source('bundle.js'))
 			.pipe(gulp.dest('dist'));
 });
+
+gulp.task('babel', function() {
+	return gulp.src(['app/*.js'])
+    .pipe(babel())
+    .pipe(gulp.dest('dest/'));
+});

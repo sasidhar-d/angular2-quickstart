@@ -4,4 +4,4 @@ In this part of the Hero project, we introduce a build and deployment step in or
 
 ## TODO
 
-Things that could be included but have not yet been translated include, Annotations for components, and source stream for better debug and understanding.
+Things that could be included but have not yet been translated include, decorators for components, and source stream for better debug and understanding.

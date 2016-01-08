@@ -1,6 +1,4 @@
-import {Hero} from './hero';
-
-(function(app) {
+import {Hero} from './hero.js';
 
 	app.HeroDetailComponent = ng.core
     .Component({
@@ -19,4 +17,3 @@ import {Hero} from './hero';
     		this.hero = {};
     	}
     })
-})(window.app || (window.app = {}));

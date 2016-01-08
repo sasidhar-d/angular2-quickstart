@@ -1,7 +1,4 @@
-
-import {Hero} from "./hero.js";
-
-(function(app) {
+import {Hero} from './hero.js';
 
   var HEROES = [ new Hero(11 , "Mr. Nice"),
                   new Hero(12 , "Narco"),
@@ -14,7 +11,7 @@ import {Hero} from "./hero.js";
                   new Hero(19 , "Magma"),
                   new Hero(20 , "Tornado")];
 
-  app.AppComponent = ng.core
+  export var AppComponent = ng.core
     .Component({
       selector: 'my-app',
       template: `<h1>{{title}}</h1>
@@ -28,8 +25,8 @@ import {Hero} from "./hero.js";
         <h2>{{selectedHero.name}} details!</h2>
         <div><label>id: </label>{{selectedHero.id}}</div>
         <div>
-        		<label>name: </label>
-        		<div><input [(ngModel)]="selectedHero.name" placeholder="name"></div>
+            <label>name: </label>
+            <div><input [(ngModel)]="selectedHero.name" placeholder="name"></div>
         </div>
       </div>
       `,
@@ -52,13 +49,18 @@ import {Hero} from "./hero.js";
     })
     .Class({
       constructor: function() {
-      	this.title = 'Tour of Heroes';
-      	this.selectedHero = {};
+        this.title = 'Tour of Heroes';
+        this.selectedHero = {};
         this.heroes = HEROES;
         this.onSelect = function(hero) {
           this.selectedHero = hero;
         }
+        class sampleClass {
+          constructor(){
+            this.hello="something";
+          }
+        }
       }
 
     });
-})(window.app || (window.app = {}));
+

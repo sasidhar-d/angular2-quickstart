@@ -1,5 +1,8 @@
-(function(app) {
-  document.addEventListener('DOMContentLoaded', function() {
-    ng.platform.browser.bootstrap(app.AppComponent);
-  });
-})(window.app || (window.app = {}));
+import {AppComponent} from './app.component.js'
+
+console.log('Content');
+
+  	console.log('top');
+    ng.platform.browser.bootstrap(AppComponent);
+    console.log('Here');
+
