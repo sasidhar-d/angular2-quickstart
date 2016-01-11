@@ -10,20 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.12/system.src.js"></script> 
 
     <!-- 2. Load our 'modules' -->
-    <script>
-    // set baseURL refernece path
-      System.config({
-        defaultJSExtension: true,
-        packages: {        
-          app: {
-            format: 'register',
-            defaultExtension: 'js'
-          }
-        }
-      });
-      System.import('dest/boot.js')
-            .then(null, console.error.bind(console));
-    </script>
 
   </head>
 
@@ -31,5 +17,8 @@
   <body>
     <my-app>Loading...</my-app>
   </body>
+
+      <script src="build/build.js">         
+    </script>
 
 </html>

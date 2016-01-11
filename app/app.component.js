@@ -11,7 +11,7 @@ import {Hero} from './hero.js';
                   new Hero(19 , "Magma"),
                   new Hero(20 , "Tornado")];
 
-console.log('Line 14');
+// console.log('Line 14');
 
   export var AppComponent = ng.core
     .Component({
@@ -57,14 +57,6 @@ console.log('Line 14');
         this.onSelect = function(hero) {
           this.selectedHero = hero;
         }
-        class sampleClass {
-          constructor(){
-            this.hello="something";
-          }
-        }
       }
 
     });
-
-throw new Error('Error');
-
