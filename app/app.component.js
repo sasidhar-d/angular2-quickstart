@@ -1,62 +1,28 @@
-import {Hero} from './hero.js';
+import {Hero,HeroService} from './heros/hero.service.js';
+import {HeroDetailComponent} from './heros/hero-detail.component.js';
 
-  var HEROES = [ new Hero(11 , "Mr. Nice"),
-                  new Hero(12 , "Narco"),
-                  new Hero(13 , "Bombasto"),
-                  new Hero(14 , "Celeritas"),
-                  new Hero(15 , "Magneta"),
-                  new Hero(16 , "RubberMan"),
-                  new Hero(17 , "Dynama"),
-                  new Hero(18 , "Dr IQ"),
-                  new Hero(19 , "Magma"),
-                  new Hero(20 , "Tornado")];
-
-// console.log('Line 14');
-
-  export var AppComponent = ng.core
-    .Component({
-      selector: 'my-app',
-      template: `<h1>{{title}}</h1>
-      <h2>My Heroes</h2>
-      <ul class="heroes">
-          <li *ngFor="#hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-            <span class="badge">{{hero.id}}</span> {{hero.name}}
-          </li>
-      </ul>
-      <div *ngIf="selectedHero">
-        <h2>{{selectedHero.name}} details!</h2>
-        <div><label>id: </label>{{selectedHero.id}}</div>
-        <div>
-            <label>name: </label>
-            <div><input [(ngModel)]="selectedHero.name" placeholder="name"></div>
-        </div>
-      </div>
-      `,
-      styles:[`
-        .heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}
-      .heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }
-      .heroes li:hover {color: #369; background-color: #EEE; left: .2em;}
-      .heroes .badge {
-        font-size: small;
-        color: white;
-        padding: 0.1em 0.7em;
-        background-color: #369;
-        line-height: 1em;
-        position: relative;
-        left: -1px;
-        top: -1px;
+  var AppComponent = ng.core
+  .Component({
+    selector: 'my-app',
+    templateUrl: 'build/heros/hero-list.template.html',
+    styleUrls: ['build/heros/hero-list.style.css'],
+    providers: [HeroService],
+    directives: [ng.router.ROUTER_DIRECTIVES]
+  })
+  .Class({
+    constructor: [HeroService,ng.router.Router,function(heroService,_router) {
+      this.title = 'Heroes Navigation';
+      this.selectedHero = {};
+      this.heroes = heroService.getHeros();
+      this._router = _router;
+      this.onSelect = function(hero) {
+        this.selectedHero = hero;
+        console.log(hero);
+        this._router.navigate('HeroDetail',{id: hero.id});
       }
-      .selected { background-color: #EEE; color: #369; }
-    `]
-    })
-    .Class({
-      constructor: function() {
-        this.title = 'Tour of Heroes';
-        this.selectedHero = {};
-        this.heroes = HEROES;
-        this.onSelect = function(hero) {
-          this.selectedHero = hero;
-        }
-      }
-
-    });
+    }]
+  });
+  AppComponent = ng.router.RouteConfig([
+    {path:'heros/:id', name:'HeroDetail', component:HeroDetailComponent}
+  ])(AppComponent)
+export {AppComponent};

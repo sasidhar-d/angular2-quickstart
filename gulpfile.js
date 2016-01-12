@@ -25,10 +25,12 @@ function build(watch) {
  		bundler.on('update', function() {
       		console.log('-> bundling...');
       		rebundle();
+          copy();
     	});	
     }
 
     rebundle();					 
+    copy();
 }
 
 function watch() {
@@ -42,3 +44,15 @@ gulp.task('build' , function() {
 gulp.task('watch', function() {
 	watch();
 })
+
+function copy(){
+  gulp.src('app/**/*.html')
+    .pipe(gulp.dest('build/'));
+  return gulp.src('app/**/*.css')
+    .pipe(gulp.dest('build/'));
+}
+
+gulp.task('copy', function() {
+  return copy();
+});
+
